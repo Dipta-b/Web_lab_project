@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Apple iPhone 15 Pro Max",
+    "price": 1199,
+    "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone15promax.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S24 Ultra",
+    "price": 1099,
+    "image": "https://images.samsung.com/is/image/samsung/p6pim/levant/galaxy-s24-ultra.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Google Pixel 9 Pro",
+    "price": 999,
+    "image": "https://store.google.com/product/images/pixel_9_pro.jpg"
+  },
+  {
+    "id": 4,
+    "name": "OnePlus 13",
+    "price": 899,
+    "image": "https://image01.oneplus.net/ebp/2025/oneplus-13.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Xiaomi 14 Ultra",
+    "price": 849,
+    "image": "https://i01.appmifile.com/webfile/globalimg/xiaomi-14-ultra.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Oppo Find X7 Pro",
+    "price": 799,
+    "image": "https://oppostore.img/find-x7-pro.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Vivo X100 Pro",
+    "price": 899,
+    "image": "https://vivo.com/images/x100-pro.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Asus ROG Phone 8",
+    "price": 1099,
+    "image": "https://dlcdnwebimgs.asus.com/files/rog-phone-8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Nothing Phone (3)",
+    "price": 749,
+    "image": "https://nothing.tech/images/phone-3.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Realme GT 7 Pro",
+    "price": 699,
+    "image": "https://image.realme.com/realme-gt-7-pro.jpg"
+  }
+]

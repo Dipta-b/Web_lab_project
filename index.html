@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1>📱 Mobile Store</h1>
+  </nav>
+
+  <section class="search-section">
+    <input type="text" id="searchBox" placeholder="Search mobile by name..." />
+  </section>
+
+  
+  <section id="phoneContainer" class="phone-container">
+    <p class="loading">Loading phones...</p>
+  </section>
+
+  
+<footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h3>📱 Mobile Store</h3>
+      <p>Your trusted destination for the latest smartphones and accessories.</p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:info@mobilestore.com">info@mobilestore.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+      <p>Address: 123 Tech Avenue, New York, USA</p>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="social-links">
+        <a href="#">🌐 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">🐦 Twitter</a>
+        <a href="#">▶️ YouTube</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p> 2025 Mobile Store | Made by Dipta</p>
+  </div>
+</footer>
+
+
+
+  <script>
+    const phoneContainer = document.getElementById("phoneContainer");
+    const searchBox = document.getElementById("searchBox");
+    let mobiles = [];
+
+
+    fetch("files.json")
+      .then(res => res.json())
+      .then(data => {
+        mobiles = data;
+        displayPhones(mobiles);
+      })
+      .catch(err => {
+        phoneContainer.innerHTML = "<p>Failed to load phones </p>";
+        console.error(err);
+      });
+
+    function displayPhones(list) {
+      phoneContainer.innerHTML = "";
+      list.forEach(phone => {
+        const card = document.createElement("div");
+        card.classList.add("phone-card");
+        card.innerHTML = `
+          <img src="${phone.image}" alt="${phone.name}" />
+          <h3>${phone.name}</h3>
+          <p>$${phone.price}</p>
+        `;
+        phoneContainer.appendChild(card);
+      });
+
+      if (list.length === 0) {
+        phoneContainer.innerHTML = "<p class='no-result'>No phones found 😕</p>";
+      }
+    }
+
+
+    searchBox.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase();
+      const filtered = mobiles.filter(phone =>
+        phone.name.toLowerCase().includes(query)
+      );
+      displayPhones(filtered);
+    });
+  </script>
+</body>
+</html>
